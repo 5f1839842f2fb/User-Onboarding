@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
-import Form from './Form';
+import OnboardingForm from './Form';
 
 function App() {
   return (
     <div className="App">
-      <Form />
+      <div className='form-container'>
+        <OnboardingForm />
+      </div>
+      
     </div>
   );
 }

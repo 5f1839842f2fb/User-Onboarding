@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
+import { Formik, Form, Field } from "formik";
 
-const Form = (props) => {
+const OnboardingForm = props => {
   return (
-    <h1>Hi</h1>
-  )
-}
+    <Formik
+      initialValues={{ name: "", email: "", password: "" }}
+      onSubmit={(values, tools) => {
+        console.log(values);
+      }}
+    >
+      {props => {
+        return (
+          <Form>
+            <Field name="name" placeholder="name" />
+            <Field name="email" placeholder="email" />
+            <Field name="password" placeholder="password" />
+            <button type='submit'>Submit</button>
+          </Form>
+        );
+      }}
+    </Formik>
+  );
+};
 
-export default Form
+export default OnboardingForm;
